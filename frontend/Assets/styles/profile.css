@@ -1,0 +1,105 @@
+body{
+    padding: 60px 0 0;
+    
+}
+
+
+.details{
+    margin: 40px;
+    padding: 5px;
+    display:flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1; 
+
+    
+}
+
+
+.detail-section{
+    margin: 10px;
+    display: flex;
+    padding: 10px;
+}
+
+.flex-item{
+    flex: 1;
+}
+
+.flex-item:first-child{
+    flex: 2;
+}
+
+.detail-section img{
+    width: 400px;
+    height:400px
+}
+
+.expertise h6, .work-experience h6{
+    margin-top: 15px;
+}
+
+.list-expertise {
+    list-style-type: square;
+    margin: 0 20px;
+    padding: 0;
+    
+}
+
+
+.mentor-details{
+    margin-left: 15px;
+}
+
+.mentor-details h3{
+    margin-bottom: 10px;
+}
+
+.role{
+    /* margin-top: 4px; */
+    text-align: center;
+    background-color: #ccc;
+    width: 120px;
+    padding: 1px;
+    font-size: 13px;
+    
+}
+
+.rating {
+    display: flex;
+  }
+  
+  .star {
+    font-size: 1em;
+    color: #ccc;
+    cursor: pointer;
+  }
+  
+  .star:hover,
+  .star:hover ~ .star {
+    color:rgb(216, 148, 22) ;
+  }
+
+.review{
+    font-size: 12px;
+    color: #424141;
+}
+
+.role, .mentor-details h3, .expertise p{
+    margin: 0;
+}
+
+
+.description{
+    margin-right: 150px;
+}
+
+h6{
+    font-size: 18px;
+    font-weight:600;
+    background-color: #ccc;
+    width: fit-content;
+    padding: 5px;
+    text-align: center;
+}
