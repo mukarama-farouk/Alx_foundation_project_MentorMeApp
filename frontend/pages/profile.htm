@@ -6,125 +6,322 @@
     <title>Mentorme</title>
     <link rel="stylesheet" href="../Assets/styles/style.css">
     <link rel="stylesheet" href="../Assets/styles/profile.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body class="">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <a class="navbar-brand" href="#"><span class="color-chng">Mentor</span>Me</a>
-                <div class="search-container">
-                    <input type="text" class="search" placeholder="Search..">
-                    <button type="submit"><i class="fas fa-search" ></i></button>
-                </div>
-                
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#Home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#About">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#Mentors">Mentors</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#login">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#Home">SignUp</a>
-                    </li>
-                </ul>
-            </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="#"><span class="color-chng">Mentor</span>Me</a>
+        <div class="search-container">
+          <input type="text" class="search" placeholder="Search..">
+          <button type="submit"><i class="fas fa-search" ></i></button>
         </div>
-    </nav>
+                
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#Home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#About">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Mentors">Mentors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Home">SignUp</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <section class="details">
-      <div class="detail-section">
-        <div class="img-expertise">
-          <img src="../Assets/images/mentor.avif" alt="" class="flex-item">
-          <div class="expertise">
-            <h6>Expertise</h6>
-            <ul class="list-expertise">
-              <li>Digital marketing</li>
-              <li>Digital marketing</li>
-              <li>Digital marketing</li>
-              <li>Digital marketing</li>
-              <li>Digital marketing</li>
-            </ul>
+  <main class="container">
+    <section class="row py-5">
+      <aside class="col-lg-8 col-sm-12">
+        <img src="/frontend/Assets/images/card 5.jpg" class="img-fluid" width="100%" alt="" />
+        <article>
+          <h3>UX Engineer // Graphic designer // Videographer</h3>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex gap-4 align-items-center">
+              <img
+                src="/frontend/Assets/images/card 5.jpg"
+                height="40"
+                width="40"
+                class="rounded-circle"
+                alt=""
+              />
+              <div>
+                <h5 class="p-0 m-0">
+                  John Doe <i class="ri-checkbox-circle-fill"></i>
+                </h5>
+                <p class="text-muted p-0 m-0">45k bookings</p>
+              </div>
+              <button  class="rounded-5  text-black" style="background-color: rgb(216, 148, 22); border: none; text-align: center; padding: 5px 10px;" data-bs-toggle="modal" data-bs-target="#exampleModal">Book Now</button>
+            </div>
+            <!-- modal -->
+            
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-lg">
+                  <div class="modal-content">
+                      <div class="modal-header text-center">
+                          <h1 class="modal-title  fs-5" id="exampleModalLabel">Book Now</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                          <p>Please login or register to proceed</p>
+                          <a href="./auth/login.htm" class="btn ctn-btn">Login</a>
+                          <a href="./auth/signup.html" class="btn ctn-btn">Signup</a>
+                      </div>
+                      
+                  </div>
+              </div>
+            </div>
+            
+            <div>
+              <button class="btn btn-dark">
+                <i class="ri-thumb-up-line"></i>
+              </button>
+              <button class="btn btn-dark">
+                <i class="ri-thumb-down-line"></i>
+              </button>
+            </div>
+          </div>
+          <hr />
+          <div class="bg-light p-4">
+            <h4>Experience</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Voluptatibus, soluta necessitatibus. Eveniet quos perferendis
+              saepe deleniti rem in alias ipsam ipsa, ea nulla sed repudiandae
+              praesentium reiciendis consequuntur, molestias quasi.
+            </p>
+          </div>
+        </article>
+        <section>
+          <div class="d-flex gap-4 align-items-end">
+            <img
+              src="/frontend/Assets/images/man-card5.avif"
+              height="50"
+              width="50"
+              class="rounded-circle"
+              alt=""
+            />
+            <form class="w-75">
+              <input
+                type="text"
+                placeholder="What is your experience on this mentor?"
+                class="review-input"
+              />
+            </form>
+          </div>
+        </section>
+      </aside>
+      <section
+        style="max-height: 180vh"
+        class="col-lg-4 col-sm-12 overflow-scroll"
+      >
+        <h1 class="mt-4">Related mentors</h1>
+        <section>
+          <div class="d-flex border border-2 border-light rounded p-3 mt-4">
+            <img
+              src="/frontend/Assets/images/man-card1.jpg"
+              class="w-50 me-4"
+              height="130px"
+              alt=""
+            />
+            <div>
+              <h4>Estherica Smith</h4>
+              <p>UX Engineer // Graphic designer // Videographer</p>
+              <button class="btn" style="background-color: rgb(216, 148, 22);">Book Mentor</button>
+            </div>
+          </div>
+          <div class="d-flex border border-2 border-light rounded p-3 mt-4">
+            <img
+              src="/frontend/Assets/images/card 2.jpg"
+              class="w-50 me-4"
+              height="130px"
+              alt=""
+            />
+            <div>
+              <h4>Estherica Smith</h4>
+              <p>UX Engineer // Graphic designer // Videographer</p>
+              <button class="btn" style="background-color: rgb(216, 148, 22);">Book Mentor</button>
+            </div>
+          </div>
+          <div class="d-flex border border-2 border-light rounded p-3 mt-4">
+            <img
+              src="/frontend/Assets/images/card 1.jpg"
+              class="w-50 me-4"
+              height="130px"
+              alt=""
+            />
+            <div>
+              <h4>Estherica Smith</h4>
+              <p>UX Engineer // Graphic designer // Videographer</p>
+              <button class="btn" style="background-color: rgb(216, 148, 22);">Book Mentor</button>
+            </div>
+          </div>
+          <div class="d-flex border border-2 border-light rounded p-3 mt-4">
+            <img
+              src="/frontend/Assets/images/card3.avif"
+              class="w-50 me-4"
+              height="130px"
+              alt=""
+            />
+            <div>
+              <h4>Estherica Smith</h4>
+              <p>UX Engineer // Graphic designer // Videographer</p>
+              <button class="btn " style="background-color: rgb(216, 148, 22);">Book Mentor</button>
+            </div>
+          </div>
+          <div class="d-flex border border-2 border-light rounded p-3 mt-4">
+            <img
+              src="/frontend/Assets/images/card6.avif"
+              class="w-50 me-4"
+              height="130px"
+              alt=""
+            />
+            <div>
+              <h4>Estherica Smith</h4>
+              <p>UX Engineer // Graphic designer // Videographer</p>
+              <button class="btn " style="background-color: rgb(216, 148, 22);">Book Mentor</button>
+            </div>
+          </div>
+          <div class="d-flex border border-2 border-light rounded p-3 mt-4">
+            <img
+              src="/frontend/Assets/images/man-card5.avif"
+              class="w-50 me-4"
+              height="130px"
+              alt=""
+            />
+            <div>
+              <h4>Estherica Smith</h4>
+              <p>UX Engineer // Graphic designer // Videographer</p>
+              <button class="btn " style="background-color: rgb(216, 148, 22);">Book Mentor</button>
+            </div>
+          </div>
+          <div class="d-flex border border-2 border-light rounded p-3 mt-4">
+            <img
+              src="/frontend/Assets/images/card4.avif"
+              class="w-50 me-4"
+              height="130px"
+              alt=""
+            />
+            <div>
+              <h4>Estherica Smith</h4>
+              <p>UX Engineer // Graphic designer // Videographer</p>
+              <button class="btn " style="background-color: rgb(216, 148, 22);">Book Mentor</button>
+            </div>
           </div>
           
-        </div>
-
-        <div class="mentor-details flex-item">
-          <h3>John Doe</h3>
-          <p class="role">Business analyst</p>
-          <div class="rating">
-            <span class="star">&#9733;</span>
-            <span class="star">&#9733;</span>
-            <span class="star">&#9733;</span>
-            <span class="star">&#9733;</span>
-            <span class="star">&#9733;</span>
-          </div>
-          <p class="review">Ratings: 20+</p>
-        </div>
-        <div class="description flex-item">
-          <h6>Work Experience</h6>
-          <ul class="list-expertise">
-            <li>Lecturer, Unversity of Ghana(2020-present)</li>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quia fuga numquam inventore?
-            Voluptas molestias vel asperiores, deserunt ipsam consequuntur?</p>
-            <li>Digital marketing</li>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quia fuga numquam inventore?
-              Voluptas molestias vel asperiores, deserunt ipsam consequuntur?</p>
-          </ul>
-          <div class="education">
-            <h6>Education</h6>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est amet recusandae assumenda voluptatum veritatis, vero dolore omnis commodi, dignissimos ipsam exercitationem minima unde sapiente temporibus quisquam quis molestias, quo
-            et impedit cupiditate. Beatae earum, consectetur enim hic quasi quos natus?</p>
-          </div>
-        </div>
-
-      </div>
-
+        </section>
+      </section>
     </section>
+  </main>
 
-
-
-
-
-
-
-
-
-  <footer class="footer-container">
-    <div class="footer-logo">
-      <a class="navbar-brand" href="#"><span class="color-chng">Mentor</span>Me</a>
-    </div>
-    <div class="footer-content">
-      <div class="footer-title">
-        <h3>Join our mentorshiop network</h3>
-      </div>
-      <div class="footer-subtitle">
-        <p>Subscribe to our mentorship network to unleash your potentials </p>
-      </div>
-      <div>
-        <form action="" method="post" id="newsletter">
-          <div class="form-group">
-            <input type="email" placeholder="Enter your email" id="email">
-            <button type="submit">Subscribe</button>
+  <!-- Footer -->
+<footer class="bg-light text-center ">
+  <!-- Grid container -->
+  <div class="container p-4">
+  
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+  
+      <!-- Twitter -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+  
+      <!-- Google -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39" href="#!" role="button"><i class="fab fa-google"></i></a>
+  
+      <!-- Instagram -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+  
+      <!-- Linkedin -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+      <!-- Github -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" href="#!" role="button"><i class="fab fa-github"></i></a>
+    </section>
+    <!-- Section: Social media -->
+  
+  
+    <!-- Section: Form -->
+    <section class="">
+      <form action="">
+        <!--Grid row-->
+        <div class="row d-flex justify-content-center">
+          <!--Grid column-->
+          <div class="col-auto">
+            <p class="pt-2">
+              <strong>Sign up for our newsletter</strong>
+            </p>
           </div>
-
-        </form>
-      </div>
-    </div>
-
+          <!--Grid column-->
+  
+          <!--Grid column-->
+          <div class="col-md-5 col-12">
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="email" id="form5Example2" placeholder="Enter email address" class="form-control" />
+              <!-- <label class="form-label" for="form5Example2">Email address</label> -->
+            </div>
+          </div>
+          <!--Grid column-->
+  
+          <!--Grid column-->
+          <div class="col-auto">
+  
+            <!-- Submit button -->
+            <button type="submit" class="btn footer-btn mb-4">
+              Subscribe
+            </button>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </form>
+    </section>
+    <!-- Section: Form -->
+  
+  
+    <!-- Section: Text -->
+    <section class="mb-4">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+        distinctio earum repellat quaerat voluptatibus placeat nam,
+        commodi optio pariatur est quia magnam eum harum corrupti dicta,
+        aliquam sequi voluptate quas.
+      </p>
+    </section>
+    <!-- Section: Text -->
+  
+  
+    
+  </div>
+  <!-- Grid container -->
+  
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgb(216, 148, 22)">
+    © 2023 Copyright:
+    <strong><a class="text-dark" href="#" style="text-decoration: none;">RAMATECH CONSULT</a></strong>
+  </div>
+  <!-- Copyright -->
+  
   </footer>
-
+  <!-- Footer -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

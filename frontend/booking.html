@@ -3,30 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./Assets/styles/booking.css">
+  <link rel="stylesheet" href="./Assets/styles/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  
   <title>Booking Page</title>
 </head>
 <body>
 
-  <div class="booking-container">
-    <h2>Welcome to the Booking Page, [User Name]!</h2>
+  <main class="min-vh-100 min-vw-100 bg-secondary pt-5">
+    
+    <section
+      class="h-75 w-50 bg-white rounded-1 mx-auto row row-cols-sm-1 row-cols-md-2 " style="justify-content: center;">
 
-    <!-- Booking Form -->
-    <form id="bookingForm">
-      <label for="date">Select a Date:</label>
-      <input type="date" id="date" name="date" required>
+      <form class="p-5">
+        <div>
+          <h5 id="welcomeMessage"></h5>
+          
+        </div>
+        <div class="mt-4">
+          <label for="date">Select a date:</label> <br />
+          <input
+            class="form-control w-100"
+            type="date"
+            name="date"
+            id="date"
+            placeholder="Please choose date"
+            required
+          />
+        </div>
+        <div class="mt-4">
+          <label for="time">Select a time:</label> <br />
+          <input
+            class="form-control w-100"
+            type="time"
+            name="time"
+            id="time"
+            placeholder="Please choose time"
+            required
+          />
+        </div>
+        
+        <button class="btn ctn-btn auth-loginBtn w-100 my-4" type="submit" id="submitButton" >Submit</button>
+      </form>
+    </section>
+    </main>
 
-      <label for="time">Select a Time:</label>
-      <input type="time" id="time" name="time" required>
+    
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const userName = sessionStorage.getItem('userName');
+      console.log('User Name:', userName);
 
-      <button type="submit" class="btn btn-primary">Book Now</button>
-    </form>
+      const welcomeMessage = document.getElementById('welcomeMessage');
+      console.log('Welcome Message Element:', welcomeMessage);
 
-    <div id="confirmationMessage" style="display: none;">
-      <p>Your booking request has been received. Thank you!</p>
-    </div>
-  </div>
+      welcomeMessage.textContent = `Welcome to the booking page, ${userName || 'Guest'}!`;
+    });
 
-  <script src="./Assets/js/main.js"></script>
+    const button = document.getElementById('submitButton');
+
+    button.addEventListener('click', function (event) {
+      event.preventDefault();
+
+      // Perform your logic
+
+      alert('Your booking request has been received. Thank you!');
+      
+
+      setTimeout(function () {
+        window.location.href = '/frontend/index.html';
+      }, 2000);
+    });
+
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

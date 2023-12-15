@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mentorme</title>
     <link rel="stylesheet" href="./Assets/styles/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
@@ -44,130 +43,244 @@
     </div>
   </nav>
 
-  <div class="carousel-container">
-      <img src="./Assets/images/bg-mentorme.jpg" alt="photo" class="image">
-      <div class="muka">
-        <h2>Unleash your potential</h2>
-        <h5><span class="color-chng">Connecting </span>you with mentors to guide, <span class="color-chng">inspire </span>and accelerate your</h5>
-        <h5><span class="color-chng">personal </span>and professional <span class="color-chng">growth</span></h5>
-        <a href="#"><button id="btn">Search Mentors</button></a>
+  <!-- Background image -->
+  <div class="p-5 text-center bg-image" style="
+      background-image: url('/frontend/Assets/images/bg-mentorme.jpg');
+      background-position: center;
+      background-size: cover;
+      height: 400px;
+      margin-top: 58px;
+    ">
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6); margin-top:70px;">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <h1 class="mb-3">Unleash your potentials</h1>
+          <h4 class="mb-3">Connect to thousands of mentors around the world</h4>
+          <a class="btn ctn-btn" href="#!" role="button" style="margin-top: 10px;">Browse mentors</a>
+        </div>
       </div>
+    </div>
+  </div>
+  
+  <!-- Card section -->
+
+  <div class="container p-5">
+    <h2 class="text-center">Meet Our Mentors</h2>
+    <hr>
+    <div class="row row-cols-md-2 ">
+      <div class="col-md-3 col-sm-6 mb-3">
+        <div class="card-group">
+        <div class="card p-3">
+            <img src="/frontend/Assets/images/card 1.jpg" class="card-img-top" alt="...">
+            <span class="position-absolute  badge port start-0">Business</span>
+        
+            <div class="card-body">
+                <h5 class="card-title">John Doe</h5>
+                <p class="role">Business</p>
+                <p class="card-text">Some quick example text to build on the card title 
+                and make up the bulk of the card's content.</p>
+                <div class="button">
+                    <!-- <a href="./pages/profile.htm" class="profile">Profile</a> -->
+                    <a href="./pages/profile.htm" class="btn book-now">Book now</a>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 mb-3">
+        <div class="card-group">
+        <div class="card p-3">
+            <img src="/frontend/Assets/images/man-card 4.webp" class="card-img-top" alt="...">
+            <span class="position-absolute  badge port start-0">Business</span>
+        
+            <div class="card-body">
+                <h5 class="card-title">John Doe</h5>
+                <p class="role">Business</p>
+                <p class="card-text">Some quick example text to build on the card title 
+                and make up the bulk of the card's content.</p>
+                <div class="button">
+                    <!-- <a href="./pages/profile.htm" class="profile">Profile</a> -->
+                    <a href="./pages/profile.htm" class="btn book-now">Book now</a>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 mb-3">
+        <div class="card-group">
+        <div class="card p-3">
+            <img src="/frontend/Assets/images/card 5.jpg" class="card-img-top" alt="...">
+            <span class="position-absolute  badge port start-0">Business</span>
+        
+            <div class="card-body">
+                <h5 class="card-title">John Doe</h5>
+                <p class="role">Business</p>
+                <p class="card-text">Some quick example text to build on the card title 
+                and make up the bulk of the card's content.</p>
+                <div class="button">
+                    <!-- <a href="./pages/profile.htm" class="profile">Profile</a> -->
+                    <a href="./pages/profile.htm" class="btn book-now">Book now</a>
+                </div>
+            </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-3 col-sm-6 mb-3">
+        <div class="card-group">
+        <div class="card p-3">
+            <img src="/frontend/Assets/images/man-card2.avif" class="card-img-top" alt="...">
+            <span class="position-absolute  badge port start-0">Business</span>
+        
+            <div class="card-body">
+                <h5 class="card-title">John Doe</h5>
+                <p class="role">Business</p>
+                <p class="card-text">Some quick example text to build on the card title 
+                and make up the bulk of the card's content.</p>
+                <div class="button">
+                    <!-- <a href="./pages/profile.htm" class="profile">Profile</a> -->
+                    <a href="./pages/profile.htm" class="btn book-now">Book now</a>
+                </div>
+            </div>
+        </div>
+       </div>
+      </div>
+      <div class="col-md-3 col-sm-6 mb-3">
+        <div class="card-group">
+        <div class="card p-3">
+            <img src="/frontend/Assets/images/card4.avif" class="card-img-top" alt="...">
+            <span class="position-absolute  badge port start-0">Business</span>
+        
+            <div class="card-body">
+                <h5 class="card-title">John Doe</h5>
+                <p class="role">Business</p>
+                <p class="card-text">Some quick example text to build on the card title 
+                and make up the bulk of the card's content.</p>
+                <div class="button">
+                    <!-- <a href="./pages/profile.htm" class="profile">Profile</a> -->
+                    <a href="./pages/profile.htm" class="btn book-now">Book now</a>
+                </div>
+            </div>
+        </div>
+        </div>  
+      </div>
+      <div class="col-md-3 col-sm-6 mb-3">
+        <div class="card-group">
+        <div class="card p-3">
+            <img src="/frontend/Assets/images/man-card 3.jpg" class="card-img-top" alt="...">
+            <span class="position-absolute  badge port  start-0">Business</span>
+        
+            <div class="card-body">
+                <h5 class="card-title">John Doe</h5>
+                <p class="role">Business</p>
+                <p class="card-text">Some quick example text to build on the card title 
+                and make up the bulk of the card's content.</p>
+                <div class="button">
+                    <!-- <a href="./pages/profile.htm" class="profile">Profile</a> -->
+                    <a href="./pages/profile.htm" class=" btn book-now">Book now</a>
+                </div>
+            </div>
+        </div>
+      </div>
+      </div>
+    </div>
   </div>
 
-  <section class="card-section">
-    <div class="section-title">
-      <div class="main-title">Meet Our Mentors</div>
-      <div class="subtitle">Connect with experienced professionals ready to guide and inspire you.</div>
-    </div>
+  
 
-    <!-- mentor card begin -->
-      <div class="card-container">
-        <!-- mento card 1 -->
-        <div class="mentor-card">
-          <div class="img-card">
-            <img src="./Assets/images/mentor.avif" alt="John Doe" class="mentor-image">
-            <p class="img">Business</p>
-          </div>
-          <div class="description-container">
-            <h4>John Doe</h4>
-            <p class="role">Business analyst</p>
-            <p>Support to individuals seeking to improve their entrepreneural skills</p>
-            <div class="button">
-              <a href="./pages/profile.htm"><button class="profile">Profile</button></a>
-              <button class="book-now" data-modal="mentorModal1">Book now</button>
-            </div>
-          </div>
-        </div>
-        <!-- modal for mentor 1 -->
-        <!-- <div class="overlay"></div> -->
-        <div class="modal" id="mentorModal1">
-          <div class="modal-content">
-            <span class="close-button" data-close="mentorModal1">&times;</span>
-            <h2>Book Now</h2>
-            <p>Please log in or sign up to book a mentor.</p>
-            <div class="button-btn">
-              <button class="btn btn-primary loginBtn">Log In</button>
-              <button class="btn btn-success signupBtn">Sign Up</button>
-            </div>
-          </div>
-        </div>
-      
-        <!-- mentor card 2 -->
-        <div class="mentor-card">
-          <div class="img-card">
-            <img src="./Assets/images/mentor.avif" alt="John Doe" class="mentor-image">
-            <p class="img">Business</p>
-          </div>
-          <div class="description-container">
-            <h4>John Doe</h4>
-            <p class="role">Business analyst</p>
-            <p>Support to individuals seeking to improve their entrepreneural skills</p>
-            <div class="button">
-              <a href="./pages/profile.htm"><button class="profile">Profile</button></a>
-              <a href="#"><button class="book-now" data-modal="mentorModal2">Book now</button></a>
-            </div>
-          </div>
-        </div>
-        <!-- mentor card 3 -->
-        <div class="mentor-card">
-          <div class="img-card">
-            <img src="./Assets/images/mentor.avif" alt="John Doe" class="mentor-image">
-            <p class="img">Business</p>
-          </div>
-          <div class="description-container">
-            <h4>John Doe</h4>
-            <p class="role">Business analyst</p>
-            <p>Support to individuals seeking to improve their entrepreneural skills</p>
-            <div class="button">
-              <a href="./pages/profile.htm"><button class="profile">Profile</button></a>
-              <a href="#"><button class="book-now" data-modal="mentorModal3">Book now</button></a>
-            </div>
-          </div>
-        </div>
-        <!-- mentor card 4 -->
-        <div class="mentor-card">
-          <div class="img-card">
-            <img src="./Assets/images/mentor.avif" alt="John Doe" class="mentor-image">
-            <p class="img">Business</p>
-          </div>
-          <div class="description-container">
-            <h4>John Doe</h4>
-            <p class="role">Business analyst</p>
-            <p>Support to individuals seeking to improve their entrepreneural skills</p>
-            <div class="button">
-              <a href="./pages/profile.htm"><button class="profile">Profile</button></a>
-              <a href=""><button class="book-now">Book now</button></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    
+<!-- Footer -->
+<footer class="bg-light text-center ">
+<!-- Grid container -->
+<div class="container p-4">
+
+  <!-- Section: Social media -->
+  <section class="mb-4">
+    <!-- Facebook -->
+    <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+
+    <!-- Twitter -->
+    <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+
+    <!-- Google -->
+    <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39" href="#!" role="button"><i class="fab fa-google"></i></a>
+
+    <!-- Instagram -->
+    <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+
+    <!-- Linkedin -->
+    <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+    <!-- Github -->
+    <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" href="#!" role="button"><i class="fab fa-github"></i></a>
   </section>
+  <!-- Section: Social media -->
 
 
-  <footer class="footer-container"> 
-    <div class="footer-logo">
-      <a class="navbar-brand" href="#"><span class="color-chng">Mentor</span>Me</a>
-    </div>
-    <div class="footer-content">
-      <div class="footer-title">
-        <h3>Join our mentorshiop network</h3>
-      </div>
-      <div class="footer-subtitle">
-        <p>Subscribe to our mentorship network to unleash your potentials </p>
-      </div>
-      <div>
-        <form action="" method="post" id="newsletter">
-          <div class="form-group">
-            <input type="email" placeholder="Enter your email" id="email">
-            <button type="submit">Subscribe</button>
+  <!-- Section: Form -->
+  <section class="">
+    <form action="">
+      <!--Grid row-->
+      <div class="row d-flex justify-content-center">
+        <!--Grid column-->
+        <div class="col-auto">
+          <p class="pt-2">
+            <strong>Sign up for our newsletter</strong>
+          </p>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-5 col-12">
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <input type="email" id="form5Example2" placeholder="Enter email address" class="form-control" />
+            <!-- <label class="form-label" for="form5Example2">Email address</label> -->
           </div>
+        </div>
+        <!--Grid column-->
 
-        </form>
+        <!--Grid column-->
+        <div class="col-auto">
+
+          <!-- Submit button -->
+          <button type="submit" class="btn footer-btn mb-4">
+            Subscribe
+          </button>
+        </div>
+        <!--Grid column-->
       </div>
-    </div>
+      <!--Grid row-->
+    </form>
+  </section>
+  <!-- Section: Form -->
 
-  </footer>
+
+  <!-- Section: Text -->
+  <section class="mb-4">
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+      distinctio earum repellat quaerat voluptatibus placeat nam,
+      commodi optio pariatur est quia magnam eum harum corrupti dicta,
+      aliquam sequi voluptate quas.
+    </p>
+  </section>
+  <!-- Section: Text -->
+
+
+  
+</div>
+<!-- Grid container -->
+
+<!-- Copyright -->
+<div class="text-center p-3" style="background-color: rgb(216, 148, 22)">
+  © 2023 Copyright:
+  <strong><a class="text-dark" href="#" style="text-decoration: none;">RAMATECH CONSULT</a></strong>
+</div>
+<!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+  
   <script src="./Assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

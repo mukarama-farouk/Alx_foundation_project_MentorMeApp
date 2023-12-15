@@ -4,24 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/frontend/Assets/styles/style.css">
-    <link rel="stylesheet" href="/frontend/Assets/styles/login.css">
-    <link rel="stylesheet" href="/frontend/Assets/styles/signup.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Signup</title>
 </head>
 <body>
-    <main class="min-vh-100 min-vw-100 bg-secondary pt-5">
+    <div id="signupSuccessMessage" class="text-success text-center" ></div>
+
+    <div id="signuperrorMessages" class="text-danger text-center" ></div>
+    <main class="min-vh-120 min-vw-130 bg-secondary pt-5">
         <section
-          class="h-75 w-75 bg-white rounded-1 mx-auto row row-cols-sm-1 row-cols-md-2"
+          class="h-75 w-75 bg-white rounded-1 mx-auto row row-cols-sm-1 row-cols-md-2" style="overflow-y: auto;"
         >
-          <form class="p-5">
+          <form class="p-5" id="signupForm" action="http://localhost:7000/api/users/register" method="post">
             <div>
               <h5>Welcome to <span class="color-chng">Mentor</span>Me 👋</h5>
               <small class="text-secondary">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
-                quo.
+                Please signup!
               </small>
             </div>
             <div class="mt-4">
@@ -62,20 +62,22 @@
                 name="password"
                 id="password"
                 placeholder="Enter password"
+                autocomplete="new-password"
               />
             </div>
             <div class="mt-4">
-              <label for="password">Confirm password</label> <br />
+              <label for="confirm_password">Confirm password</label> <br />
               <input
                 class="form-control w-100"
                 type="password"
-                name="password"
-                id="password"
+                name="confirmPassword"
+                id="confirmPassword"
                 placeholder="Confirm password"
+                autocomplete="new-password"
               />
             </div>
   
-            <button class="btn btn-info custom-btn auth-signupBtn w-100 my-4">Create Account</button>
+            <button class="btn ctn-btn auth-signupBtn w-100 my-4" type="submit" id="submit">Create Account</button>
             <p class="text-center w-100">
               <span class="text-secondary text-decoration-none"
                 >Existing user?</span
@@ -84,8 +86,83 @@
             </p>
           </form>
   
-          <img src="/frontend/Assets/images/mentor.avif" alt="photo" />
+          <img src="/frontend/Assets/images/mentor2.png" alt="photo" />
         </section>
       </main>
+    <script>
+      const form = document.getElementById('signupForm');
+      form.addEventListener('submit', registerUser);
+      async function registerUser(event) {
+        event.preventDefault();
+        const fullname = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        try {
+          const response = await fetch('http://localhost:7000/api/users/register', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ fullname, email, phone, password, confirmPassword }),
+          });
+
+        if (response.ok) {
+          const responseData = await response.json()
+          console.log('server response:', responseData)
+
+          displaySignupSuccessMessage(responseData.message);
+
+          // Redirect to the login page after a brief delay (e.g., 2 seconds)
+          setTimeout(() => {
+            window.location.href = '/frontend/pages/auth/login.htm';
+          }, 2000);
+
+        } else {
+          // Handle other status codes or errors
+          const errorData = await response.json(); 
+          console.error('Error during login:', errorData);
+
+      // Display the error messages to the user
+      displaysignupErrorMessages(errorData.error);
+    }
+  } catch (error) {
+    console.error('Error during login:', error);
+  }
+}
+
+    function displaysignupErrorMessages(errorMessage) {
+      
+      const errorMessagesElement = document.getElementById('signuperrorMessages');
+
+      // Clear previous error messages
+      errorMessagesElement.innerHTML = '';
+
+      const errorMessageElement = document.createElement('div');
+      errorMessageElement.textContent = errorMessage;
+      errorMessageElement.classList.add('text-danger', 'text-center');
+      errorMessagesElement.appendChild(errorMessageElement);
+      errorMessagesElement.style.height = '40px'
+      errorMessagesElement.style.fontSize = '18px'
+
+    }
+
+    function displaySignupSuccessMessage(successMessage) {
+      const signupSuccessMessagesElement = document.getElementById('signupSuccessMessage');
+
+      // Clear previous success messages
+      signupSuccessMessagesElement.innerHTML = '';
+
+      const successMessageElement = document.createElement('div');
+      successMessageElement.textContent = successMessage;
+      successMessageElement.classList.add('text-success', 'text-center');
+      signupSuccessMessagesElement.appendChild(successMessageElement);
+      signupSuccessMessagesElement.style.height = '40px';
+      signupSuccessMessagesElement.style.fontSize = '18px';
+    }
+
+  </script>
 </body>
 </html>
