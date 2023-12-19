@@ -1,7 +1,5 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const bcrypt = require('bcrypt');
 const session = require('express-session');
 const cors = require('cors');
 const path = require('path');
@@ -11,12 +9,13 @@ const path = require('path');
 const { connectDb } = require("./utils/database");
 
 const userRoute = require("./routes/userRoute");
+const mentorRoute = require("./routes/mentorRoute");
 
 connectDb();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({ credentials: true, origin: 'http://127.0.0.1:5501' }));
 app.use(bodyParser.json());
 
 
@@ -34,6 +33,7 @@ app.use(express.static(path.join(__dirname, '../frontend')));
 
 app.use(express.json());
 app.use("/api/users", userRoute);
+app.use("/api/mentors", mentorRoute);
 
 
 

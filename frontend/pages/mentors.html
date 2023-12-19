@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/frontend/Assets/styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand" href="/frontend/index.html"><span class="color-chng">Mentor</span>Me</a>
+            <div class="search-container">
+              <input type="text" class="search" placeholder="Search..">
+              <button type="submit"><i class="fas fa-search" ></i></button>
+            </div>
+    
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="/frontend/index.html">Home</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="./pages/mentors.html" id="mentorsLink" >Mentors</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 <span id="userNameDisplay">Account</span> 
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" id="signupButton" href="./pages/auth/signup.html">Signup</a>
+                  <a class="dropdown-item" id="loginButton" href="./pages/auth/login.htm">Login</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" id="logoutButton" style="display: none;" >Logout</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      
+
+    <div class="container p-5 " id="mentorContainer">
+        <h2 class="text-center mt-4">Meet Our Mentors</h2>
+        
+        <div class="row row-cols-md-2" id="mentorList"></div>
+    </div>
+    <script >
+        document.addEventListener('DOMContentLoaded', function () {
+            const mentorsLink = document.getElementById('mentorsLink');
+
+            if (mentorsLink) {
+                mentorsLink.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    // Navigate to mentors.html
+                    window.location.href = '/frontend/pages/mentors.html'; // Update the path
+                });
+            }
+
+            // Fetch mentors when the page loads
+            fetchMentors();
+
+            function fetchMentors() {
+                fetch('http://localhost:7000/api/mentors/allmentors')
+                    .then(response => response.json())
+                    .then(mentors => {
+                        const mentorListContainer = document.getElementById('mentorList');
+                        mentorListContainer.innerHTML = '';
+
+                        mentors.forEach(mentor => {
+                            const card = createMentorCard(mentor);
+                            mentorListContainer.appendChild(card);
+                        });
+                    })
+                    .catch(error => console.error('Error fetching mentors:', error));
+            }
+
+          
+            function createMentorCard(mentor) {
+              const cardDiv = document.createElement('div');
+                  cardDiv.classList.add('col-md-3', 'col-sm-6', 'mb-3', 'd-flex'); // Add Bootstrap classes to style the card
+          
+                  // Set the inner HTML content for the mentor card using template literals
+                  cardDiv.innerHTML = `
+                      <div class="card-group">
+                          <div class="card p-3 h-100">
+                              <!-- Mentor image -->
+                              <img src="${mentor.image}" class="card-img-top" alt="...">
+                              
+                              <!-- Category badge -->
+                              <span class="position-absolute badge port start-0">${mentor.category}</span>
+                              
+                              <div class="card-body d-flex flex-column  ">
+                                  <!-- Mentor name -->
+                                  <h5 class="card-title">${mentor.name}</h5>
+                                  
+                                  <!-- Mentor category -->
+                                  <p class="role">${mentor.category}</p>
+                                  
+                                  <!-- Mentor description -->
+                                  <p class="card-text">${mentor.description}</p>
+                                  
+                                  <div class="button mt-auto"">
+                                      <!-- Link to mentor's profile -->
+                                      <a href="${mentor.profileLink}" class="btn book-now">Book now</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  `;
+          
+                  // Return the created mentor card
+                  return cardDiv;
+                
+            }
+          });
+          
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>   
+</body>
+</html>

@@ -19,28 +19,32 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="#"><span class="color-chng">Mentor</span>Me</a>
+        <a class="navbar-brand" href="/frontend/index.html"><span class="color-chng">Mentor</span>Me</a>
         <div class="search-container">
           <input type="text" class="search" placeholder="Search..">
           <button type="submit"><i class="fas fa-search" ></i></button>
         </div>
-                
+
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link" href="#Home">Home</a>
           </li>
+          
           <li class="nav-item">
-            <a class="nav-link" href="#About">About</a>
+            <a class="nav-link" href="./pages/mentors.html" id="mentorsLink" >Mentors</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#Mentors">Mentors</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#login">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#Home">SignUp</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             <span id="userNameDisplay">Account</span> 
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" id="signupButton" href="./pages/auth/signup.html">Signup</a>
+              <a class="dropdown-item" id="loginButton" href="./pages/auth/login.htm">Login</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" id="logoutButton" style="display: none;" >Logout</a>
+            </div>
           </li>
         </ul>
       </div>
@@ -50,23 +54,24 @@
   <main class="container">
     <section class="row py-5">
       <aside class="col-lg-8 col-sm-12">
-        <img src="/frontend/Assets/images/card 5.jpg" class="img-fluid" width="100%" alt="" />
-        <article>
-          <h3>UX Engineer // Graphic designer // Videographer</h3>
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="d-flex gap-4 align-items-center">
-              <img
-                src="/frontend/Assets/images/card 5.jpg"
-                height="40"
-                width="40"
-                class="rounded-circle"
-                alt=""
-              />
+        <div class="mentor-card" data-mentor-id="">
+          <img src="/frontend/Assets/images/card 7.avif" class="img-fluid" width="100%" alt="" />
+          <article>
+            <h3>Digital Marketer // Graphic designer // Videographer</h3>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex gap-4 align-items-center">
+                <img
+                  src="/frontend/Assets/images/card 7.avif"
+                  height="40"
+                  width="40"
+                  class="rounded-circle"
+                  alt=""
+                />
               <div>
-                <h5 class="p-0 m-0">
-                  John Doe <i class="ri-checkbox-circle-fill"></i>
-                </h5>
-                <p class="text-muted p-0 m-0">45k bookings</p>
+              <h5 class="p-0 m-0">
+                Emily Brown <i class="ri-checkbox-circle-fill"></i>
+              </h5>
+              <p class="text-muted p-0 m-0">45k bookings</p>
               </div>
               <button  class="rounded-5  text-black" style="background-color: rgb(216, 148, 22); border: none; text-align: center; padding: 5px 10px;" data-bs-toggle="modal" data-bs-target="#exampleModal">Book Now</button>
             </div>
@@ -127,7 +132,10 @@
             </form>
           </div>
         </section>
+        </div>
       </aside>
+
+
       <section
         style="max-height: 180vh"
         class="col-lg-4 col-sm-12 overflow-scroll"

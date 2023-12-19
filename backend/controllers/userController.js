@@ -99,9 +99,25 @@ const getAllUsers = async (req, res) => {
 };
 
 
+const logoutUser = async (req, res) => {
+  try {
+    // Clear the session data
+    req.session.destroy((err) => {
+      if (err) {
+        return res.status(500).json({ error: 'Logout failed', message: err.message });
+      }
+      res.status(200).json({ message: 'Logout successful' });
+    });
+  } catch (error) {
+    res.status(500).json({ error: 'Logout failed', message: error.message });
+  }
+}
+
+
 module.exports = {
   registerUser,
   loginUser,
   getAllUsers,
   getUserById,
+  logoutUser,
 };

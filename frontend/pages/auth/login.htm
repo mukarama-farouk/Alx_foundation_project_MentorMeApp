@@ -86,9 +86,9 @@
       console.log('User data', userData);
       sessionStorage.setItem('userName', userData.fullname);
 
-      window.location.href = '/frontend/booking.html';
+      window.location.href = '/frontend/pages/booking.html';
     } else {
-      const errorData = await response.json(); // Assuming your server returns error messages in JSON format
+      const errorData = await response.json(); 
       console.error('Error during login:', errorData);
 
       // Display the error messages to the user
@@ -100,10 +100,10 @@
 }
 
     function displayErrorMessages(errorMessage) {
-      // Assuming you have an element with the id "errorMessages" to display the errors
+      
       const errorMessagesElement = document.getElementById('errorMessages');
 
-      // Clear previous error messages
+      
       errorMessagesElement.innerHTML = '';
 
       // Display the error message
@@ -115,12 +115,8 @@
       errorMessagesElement.style.fontSize = '18px'
 
     }
-
-      
+    
 </script>
-  
-
-
   
 </body>
 </html>
