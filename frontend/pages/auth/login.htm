@@ -93,6 +93,10 @@
 
       // Display the error messages to the user
       displayErrorMessages(errorData.error);
+
+      setTimeout(() => {
+        hideErrorMessages();
+      }, 5000);
     }
   } catch (error) {
     console.error('Error during login:', error);
@@ -114,6 +118,12 @@
       errorMessagesElement.style.height = '40px'
       errorMessagesElement.style.fontSize = '18px'
 
+    }
+
+    function hideErrorMessages() {
+      const errorMessagesElement = document.getElementById('errorMessages');
+      errorMessagesElement.innerHTML = ''; 
+      errorMessagesElement.style.display = 'none'; 
     }
     
 </script>
